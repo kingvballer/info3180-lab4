@@ -50,6 +50,21 @@ def add_entry():
     #g.db.commit()
     #flash('New entry was successfully posted')
     #return redirect(url_for('show_entries'))
+    
+    
+@app.route('/iterate')
+def iterate()
+    import os
+    rootdir = os.getcwd()
+    print  rootdir
+    for subdir, dirs, files in os.walk(rootdir + '/static/uploads'):
+        for files in files:
+            print os.path.join(subdir,file)
+            
+            
+@app.route('/filelisting')
+def filelisting()
+    return iterate()
 
 @app.route('/login', methods=['POST','GET'])
 def login():
