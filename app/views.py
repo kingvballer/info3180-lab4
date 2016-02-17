@@ -53,17 +53,18 @@ def add_entry():
     
     
 @app.route('/iterate')
-def iterate()
+def iterate():
     import os
     rootdir = os.getcwd()
     print  rootdir
     for subdir, dirs, files in os.walk(rootdir + '/static/uploads'):
         for files in files:
             print os.path.join(subdir,file)
+    return rootdir
             
             
 @app.route('/filelisting')
-def filelisting()
+def filelisting():
     return iterate()
 
 @app.route('/login', methods=['POST','GET'])
